@@ -1,0 +1,41 @@
+.input {
+  border-radius: 0;
+  outline: none;
+}
+.input:hover {
+  border: 1px solid #61f95c;
+}
+.btn {
+  border: none;
+  border-radius: 0;
+  background-color: #4286f4;
+}
+.btn:hover {
+  background-color: #61f95c;
+}
+
+.user {
+  border: 1px solid #4286f4;
+  cursor: pointer;
+  padding: 1em;
+  margin: 1em;
+}
+
+.user:hover {
+  box-shadow: 1px 2px 3px #ccc;
+}
+
+.box {
+  border: 1px solid #4286f4;
+  padding: 2em;
+}
+
+.box > .details {
+  margin-top: 1em;
+  font-family: monospace;
+}
+
+.high {
+    height: 1200px;
+    background-image: "../assets/OctocatBackground.png";
+}
