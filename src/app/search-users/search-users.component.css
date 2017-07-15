@@ -1,13 +1,13 @@
 .input {
-  border-radius: 0;
+  border-radius: 5px;
   outline: none;
 }
 .input:hover {
-  border: 1px solid #61f95c;
+  border: 3px solid #61f95c;
 }
 .btn {
   border: none;
-  border-radius: 0;
+  border-radius: 5px;
   background-color: #4286f4;
 }
 .btn:hover {
@@ -15,18 +15,21 @@
 }
 
 .user {
-  border: 1px solid #4286f4;
+  border: 3px solid #4286f4;
+  border-radius: 5px;
   cursor: pointer;
   padding: 1em;
   margin: 1em;
+  background:rgba(255,255,255,0.5);
 }
 
 .user:hover {
   box-shadow: 1px 2px 3px #ccc;
+  background-color: lightgray;
 }
 
 .box {
-  border: 1px solid #4286f4;
+  border: 3px solid #4286f4;
   padding: 2em;
 }
 
@@ -38,4 +41,9 @@
 .high {
     height: 1200px;
     background-image: "../assets/OctocatBackground.png";
+}
+
+.details {
+    border-radius: 10px;
+    background-color: lightgray;
 }
