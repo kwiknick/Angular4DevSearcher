@@ -1,0 +1,8 @@
+// In the base directory of the project build the app like so:
+docker build -t search-devs .
+
+// Anywhere you can run a docker command, you can run the built container like so:
+docker run --rm -p 4200:4200 search-devs
+
+// For docker-compose run this one liner to get up and running:
+docker-compose up -d --build --remove-orphans
