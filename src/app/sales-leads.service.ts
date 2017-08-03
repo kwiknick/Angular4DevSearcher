@@ -5,51 +5,28 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class SearchUsersService
+export class SalesLeadsService
 {
 
-  private searchUsersEndPoint = 'https://api.github.com/search/users?q=';
-  private getUserDetailsEndPoint = 'https://api.github.com/users/';
+  private salesLeadsEndPoint = 'http://cladevwrk03:4321/api/merchant';
 
   constructor(private http: Http) { }
 
-  getUsersByPlaceAndLanguage(place: string, language: string)
+  getSalesLeads()
   {
-    let url;
+    const url = this.salesLeadsEndPoint;
 
-    if (place && !language)
-    {
-      url = `${this.searchUsersEndPoint}location:${place}`;
-    }
-    else if (!place && language)
-    {
-      url = `${this.searchUsersEndPoint}language:${language}`;
-    }
-    else
-    {
-      url = `${this.searchUsersEndPoint}location:${place}+language:${language}`;
-    }
-
+    console.log('Inside the getSalesLeads Method. Hitting this url: ' + url)
     return this.http.get(url)
       .map(this.extractData)
       .catch(this.handleError);
   }
 
-  getDetailsByUserName(username: string)
-  {
-    if (username)
-    {
-      let url = `${this.getUserDetailsEndPoint}${username}`;
-      return this.http.get(url)
-        .map((res: Response) => res.json())
-        .catch(this.handleError);
-    }
-  }
-
   private extractData(res: Response)
   {
     let body = res.json();
-    return body.items || {};
+    console.log(body)
+    return body || {};
   }
 
   private handleError(error: Response | any)
